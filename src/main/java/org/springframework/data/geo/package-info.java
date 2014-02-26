@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 /**
+ * Support for reusable geo-spatial structures.
  *
  * @author Thomas Darimont
  */
