@@ -69,16 +69,12 @@ public class Polygon implements Shape, Iterable<Point> {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.springframework.data.mongodb.core.geo.Shape#asList()
-	 */
-	public List<List<Double>> asList() {
+	public List<Point> getPoints() {
 
-		List<List<Double>> result = new ArrayList<List<Double>>();
+		List<Point> result = new ArrayList<Point>();
 
 		for (Point point : points) {
-			result.add(point.asList());
+			result.add(point);
 		}
 
 		return result;
@@ -103,7 +99,7 @@ public class Polygon implements Shape, Iterable<Point> {
 			return true;
 		}
 
-		if (obj == null || !getClass().isInstance(obj)) {
+		if (obj == null || !(obj instanceof Polygon)) {
 			return false;
 		}
 

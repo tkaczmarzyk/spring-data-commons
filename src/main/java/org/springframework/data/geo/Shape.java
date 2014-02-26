@@ -15,7 +15,6 @@
  */
 package org.springframework.data.geo;
 
-import java.util.List;
 
 /**
  * Common interface for all shapes. Allows building external representations of them.
@@ -23,13 +22,4 @@ import java.util.List;
  * @author Oliver Gierke
  * @author Thomas Darimont
  */
-public interface Shape {
-
-	/**
-	 * Returns the {@link Shape} as a list of usually {@link Double} or {@link List}s of {@link Double}s. Wildcard bound
-	 * to allow implementations to return a more concrete element type.
-	 * 
-	 * @return
-	 */
-	List<? extends Object> asList();
-}
+public interface Shape {}

@@ -15,9 +15,6 @@
  */
 package org.springframework.data.geo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.util.Assert;
 
 /**
@@ -58,19 +55,6 @@ public class Box implements Shape {
 		return second;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.springframework.data.mongodb.core.geo.Shape#asList()
-	 */
-	public List<? extends Object> asList() {
-
-		List<List<Double>> list = new ArrayList<List<Double>>();
-		list.add(getLowerLeft().asList());
-		list.add(getUpperRight().asList());
-
-		return list;
-	}
-
 	@Override
 	public String toString() {
 		return String.format("Box [%s, %s]", first, second);
@@ -92,7 +76,7 @@ public class Box implements Shape {
 			return true;
 		}
 
-		if (obj == null || !getClass().isInstance(obj)) {
+		if (obj == null || !(obj instanceof Box)) {
 			return false;
 		}
 

@@ -15,9 +15,6 @@
  */
 package org.springframework.data.geo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.util.Assert;
 
@@ -80,17 +77,6 @@ public class Circle implements Shape {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.springframework.data.mongodb.core.geo.Shape#asList()
-	 */
-	public List<Object> asList() {
-		List<Object> result = new ArrayList<Object>();
-		result.add(getCenter().asList());
-		result.add(getRadius());
-		return result;
-	}
-
-	/*
-	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -108,7 +94,7 @@ public class Circle implements Shape {
 			return true;
 		}
 
-		if (obj == null || !getClass().isInstance(obj)) {
+		if (obj == null || !(obj instanceof Circle)) {
 			return false;
 		}
 
