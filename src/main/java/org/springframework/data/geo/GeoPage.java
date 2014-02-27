@@ -25,6 +25,7 @@ import org.springframework.data.domain.Pageable;
  * 
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
 public class GeoPage<T> extends PageImpl<GeoResult<T>> {
 

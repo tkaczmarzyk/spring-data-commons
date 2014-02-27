@@ -30,6 +30,9 @@ import org.junit.Test;
  */
 public class GeoResultsUnitTests {
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	@SuppressWarnings("unchecked")
 	public void calculatesAverageForGivenGeoResults() {

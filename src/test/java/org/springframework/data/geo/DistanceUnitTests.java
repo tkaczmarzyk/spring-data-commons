@@ -29,6 +29,9 @@ import org.junit.Test;
  */
 public class DistanceUnitTests {
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void defaultsMetricToNeutralOne() {
 
@@ -36,6 +39,9 @@ public class DistanceUnitTests {
 		assertThat(new Distance(2.5, null).getMetric(), is((Metric) Metrics.NEUTRAL));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void addsDistancesWithoutExplicitMetric() {
 
@@ -45,6 +51,9 @@ public class DistanceUnitTests {
 		assertThat(left.add(right), is(new Distance(5.0, KILOMETERS)));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void addsDistancesWithExplicitMetric() {
 

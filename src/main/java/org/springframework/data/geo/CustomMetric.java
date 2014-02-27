@@ -20,6 +20,7 @@ package org.springframework.data.geo;
  * 
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
 public class CustomMetric implements Metric {
 

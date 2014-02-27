@@ -28,16 +28,25 @@ import org.junit.Test;
  */
 public class CircleUnitTests {
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNullOrigin() {
 		new Circle(null, 0);
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNegativeRadius() {
 		new Circle(1, 1, -1);
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void considersTwoCirclesEqualCorrectly() {
 

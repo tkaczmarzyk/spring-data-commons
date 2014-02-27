@@ -32,11 +32,17 @@ public class PolygonUnitTests {
 	Point second = new Point(2, 2);
 	Point third = new Point(3, 3);
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNullPoints() {
 		new Polygon(null, null, null);
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void createsSimplePolygon() {
 
@@ -45,6 +51,9 @@ public class PolygonUnitTests {
 		assertThat(polygon, is(notNullValue()));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void isEqualForSamePoints() {
 

@@ -33,12 +33,18 @@ public class GeoResultUnitTests {
 	GeoResult<String> third = new GeoResult<String>("Bar", new Distance(2.5));
 	GeoResult<String> fourth = new GeoResult<String>("Foo", new Distance(5.2));
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void considersSameInstanceEqual() {
 
 		assertThat(first.equals(first), is(true));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void considersSameValuesAsEqual() {
 
@@ -50,6 +56,9 @@ public class GeoResultUnitTests {
 		assertThat(fourth.equals(first), is(false));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNullContent() {

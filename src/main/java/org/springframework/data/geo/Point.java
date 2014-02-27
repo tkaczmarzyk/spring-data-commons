@@ -15,9 +15,6 @@
  */
 package org.springframework.data.geo;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.util.Assert;
 
@@ -27,6 +24,7 @@ import org.springframework.util.Assert;
  * @author Mark Pollack
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
 public class Point {
 
@@ -53,14 +51,6 @@ public class Point {
 
 	public double getY() {
 		return y;
-	}
-
-	public double[] asArray() {
-		return new double[] { x, y };
-	}
-
-	public List<Double> asList() {
-		return Arrays.asList(x, y);
 	}
 
 	@Override

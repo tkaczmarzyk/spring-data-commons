@@ -27,11 +27,17 @@ import org.junit.Test;
  */
 public class PointUnitTests {
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNullforCopyConstructor() {
 		new Point(null);
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void equalsIsImplementedCorrectly() {
 
@@ -40,6 +46,9 @@ public class PointUnitTests {
 		assertThat(new Point(2.0, 2.0), is(not(equalTo(new Point(1.5, 1.5)))));
 	}
 
+	/**
+	 * @see DATACMNS-437
+	 */
 	@Test
 	public void invokingToStringWorksCorrectly() {
 		new Point(1.5, 1.5).toString();

@@ -24,8 +24,9 @@ import org.springframework.util.Assert;
  * @author Mark Pollack
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
-public class Circle implements Shape {
+public class Circle {
 
 	private final Point center;
 	private final double radius;

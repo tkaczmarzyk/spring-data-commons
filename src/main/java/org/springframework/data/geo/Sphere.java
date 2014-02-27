@@ -22,15 +22,18 @@ import org.springframework.util.Assert;
  * Represents a geospatial sphere value.
  * 
  * @author Thomas Darimont
+ * @since 1.8
  */
-public class Sphere implements Shape {
+public class Sphere {
 
 	private final Point center;
 	private final double radius;
 
 	/**
-	 * @param center
-	 * @param radius
+	 * Creates a Sphere around the given center {@link Point} with the given radius.
+	 * 
+	 * @param center must not be {@literal null}.
+	 * @param radius must not be {@literal null}.
 	 */
 	@PersistenceConstructor
 	public Sphere(Point center, double radius) {
@@ -43,6 +46,8 @@ public class Sphere implements Shape {
 	}
 
 	/**
+	 * Creates a Sphere from the given {@link Circle}.
+	 * 
 	 * @param circle
 	 */
 	public Sphere(Circle circle) {

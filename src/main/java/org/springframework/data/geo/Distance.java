@@ -22,6 +22,7 @@ import org.springframework.util.ObjectUtils;
  * 
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
 public class Distance {
 

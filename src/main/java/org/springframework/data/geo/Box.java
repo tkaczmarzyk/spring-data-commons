@@ -18,17 +18,24 @@ package org.springframework.data.geo;
 import org.springframework.util.Assert;
 
 /**
- * Represents a geo-spatial box value
+ * Represents a geospatial box value
  * 
  * @author Mark Pollack
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
-public class Box implements Shape {
+public class Box {
 
 	private final Point first;
 	private final Point second;
 
+	/**
+	 * Creates a new Box spanning from the given lowerLeft to the upperRight {@link Point}s.
+	 * 
+	 * @param lowerLeft must not be {@literal null}.
+	 * @param upperRight must not be {@literal null}.
+	 */
 	public Box(Point lowerLeft, Point upperRight) {
 
 		Assert.notNull(lowerLeft);
@@ -38,6 +45,12 @@ public class Box implements Shape {
 		this.second = upperRight;
 	}
 
+	/**
+	 * Creates a new Box from the given lowerLeft to the upperRight points represented as the {@literal double[]} .
+	 * 
+	 * @param lowerLeft must not be {@literal null} and contain exactly 2 doubles.
+	 * @param upperRight must not be {@literal null} and contain exactly 2 doubles.
+	 */
 	public Box(double[] lowerLeft, double[] upperRight) {
 
 		Assert.isTrue(lowerLeft.length == 2, "Point array has to have 2 elements!");

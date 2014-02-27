@@ -28,6 +28,7 @@ import org.springframework.util.StringUtils;
  * 
  * @author Oliver Gierke
  * @author Thomas Darimont
+ * @since 1.8
  */
 public class GeoResults<T> implements Iterable<GeoResult<T>> {
 
