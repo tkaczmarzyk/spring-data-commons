@@ -29,33 +29,35 @@ import org.springframework.util.Assert;
 public class Circle {
 
 	private final Point center;
-	private final double radius;
+	private final Distance radius;
 
 	/**
 	 * Creates a new {@link Circle} from the given {@link Point} and radius.
 	 * 
 	 * @param center must not be {@literal null}.
-	 * @param radius must be greater or equal to zero.
+	 * @param radius must not be {@literal null} and it's value greater or equal to zero.
 	 */
 	@PersistenceConstructor
-	public Circle(Point center, double radius) {
+	public Circle(Point center, Distance radius) {
 
 		Assert.notNull(center);
-		Assert.isTrue(radius >= 0, "Radius must not be negative!");
+		Assert.notNull(radius);
+		Assert.isTrue(radius.getValue() >= 0, "Radius must not be negative!");
 
 		this.center = center;
 		this.radius = radius;
 	}
 
 	/**
-	 * Creates a new {@link Circle} from the given coordinates and radius.
+	 * Creates a new {@link Circle} from the given coordinates and radius as {@link Distance} with a
+	 * {@link Metrics#NEUTRAL}.
 	 * 
 	 * @param centerX
 	 * @param centerY
 	 * @param radius must be greater or equal to zero.
 	 */
 	public Circle(double centerX, double centerY, double radius) {
-		this(new Point(centerX, centerY), radius);
+		this(new Point(centerX, centerY), new Distance(radius));
 	}
 
 	/**
@@ -72,7 +74,7 @@ public class Circle {
 	 * 
 	 * @return
 	 */
-	public double getRadius() {
+	public Distance getRadius() {
 		return radius;
 	}
 
@@ -101,7 +103,7 @@ public class Circle {
 
 		Circle that = (Circle) obj;
 
-		return this.center.equals(that.center) && this.radius == that.radius;
+		return this.center.equals(that.center) && this.radius.equals(that.radius);
 	}
 
 	/*
@@ -112,7 +114,7 @@ public class Circle {
 	public int hashCode() {
 		int result = 17;
 		result += 31 * center.hashCode();
-		result += 31 * radius;
+		result += 31 * radius.hashCode();
 		return result;
 	}
 }

@@ -27,7 +27,7 @@ import org.springframework.util.Assert;
 public class Sphere {
 
 	private final Point center;
-	private final double radius;
+	private final Distance radius;
 
 	/**
 	 * Creates a Sphere around the given center {@link Point} with the given radius.
@@ -36,10 +36,11 @@ public class Sphere {
 	 * @param radius must not be {@literal null}.
 	 */
 	@PersistenceConstructor
-	public Sphere(Point center, double radius) {
+	public Sphere(Point center, Distance radius) {
 
 		Assert.notNull(center);
-		Assert.isTrue(radius >= 0, "Radius must not be negative!");
+		Assert.notNull(radius);
+		Assert.isTrue(radius.getValue() >= 0, "Radius must not be negative!");
 
 		this.center = center;
 		this.radius = radius;
@@ -68,7 +69,7 @@ public class Sphere {
 	 * 
 	 * @return
 	 */
-	public double getRadius() {
+	public Distance getRadius() {
 		return radius;
 	}
 
@@ -97,7 +98,7 @@ public class Sphere {
 
 		Sphere that = (Sphere) obj;
 
-		return this.center.equals(that.center) && this.radius == that.radius;
+		return this.center.equals(that.center) && this.radius.equals(that.radius);
 	}
 
 	/*
@@ -108,7 +109,7 @@ public class Sphere {
 	public int hashCode() {
 		int result = 17;
 		result += 31 * center.hashCode();
-		result += 31 * radius;
+		result += 31 * radius.hashCode();
 		return result;
 	}
 }

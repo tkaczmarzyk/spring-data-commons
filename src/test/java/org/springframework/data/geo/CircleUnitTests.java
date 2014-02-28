@@ -33,7 +33,7 @@ public class CircleUnitTests {
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void rejectsNullOrigin() {
-		new Circle(null, 0);
+		new Circle(null, new Distance(0));
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class CircleUnitTests {
 		assertThat(left, is(right));
 		assertThat(right, is(left));
 
-		right = new Circle(new Point(1, 1), 1);
+		right = new Circle(new Point(1, 1), new Distance(1));
 
 		assertThat(left, is(right));
 		assertThat(right, is(left));

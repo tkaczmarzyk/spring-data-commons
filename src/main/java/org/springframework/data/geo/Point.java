@@ -31,12 +31,23 @@ public class Point {
 	private final double x;
 	private final double y;
 
+	/**
+	 * Creates a {@link Point} from the given {@code x}, {@code y} coordinate.
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	@PersistenceConstructor
 	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
 
+	/**
+	 * Creates a {@link Point} from the given {@link Point} coordinate.
+	 * 
+	 * @param point must not be {@literal null}.
+	 */
 	public Point(Point point) {
 
 		Assert.notNull(point);

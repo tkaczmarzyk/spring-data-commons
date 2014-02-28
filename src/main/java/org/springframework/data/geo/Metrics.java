@@ -26,11 +26,11 @@ public enum Metrics implements Metric {
 
 	KILOMETERS(6378.137), MILES(3963.191), NEUTRAL(1);
 
-	/**
-	 * Holds the earth radius at equator.
-	 */
 	private final double multiplier;
 
+	/**
+	 * @param multiplier the earth radius at equator.
+	 */
 	private Metrics(double multiplier) {
 		this.multiplier = multiplier;
 	}

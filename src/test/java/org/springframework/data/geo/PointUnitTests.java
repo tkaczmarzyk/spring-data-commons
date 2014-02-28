@@ -24,6 +24,7 @@ import org.junit.Test;
  * Unit tests for {@link Point}.
  * 
  * @author Oliver Gierke
+ * @author Thomas Darimont
  */
 public class PointUnitTests {
 

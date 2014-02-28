@@ -31,40 +31,40 @@ public class Box {
 	private final Point second;
 
 	/**
-	 * Creates a new Box spanning from the given lowerLeft to the upperRight {@link Point}s.
+	 * Creates a new Box spanning from the given first to the second {@link Point}.
 	 * 
-	 * @param lowerLeft must not be {@literal null}.
-	 * @param upperRight must not be {@literal null}.
+	 * @param first must not be {@literal null}.
+	 * @param second must not be {@literal null}.
 	 */
-	public Box(Point lowerLeft, Point upperRight) {
+	public Box(Point first, Point second) {
 
-		Assert.notNull(lowerLeft);
-		Assert.notNull(upperRight);
+		Assert.notNull(first);
+		Assert.notNull(second);
 
-		this.first = lowerLeft;
-		this.second = upperRight;
+		this.first = first;
+		this.second = second;
 	}
 
 	/**
-	 * Creates a new Box from the given lowerLeft to the upperRight points represented as the {@literal double[]} .
+	 * Creates a new Box from the given {@code first} to the {@code second} point represented as the {@literal double[]}.
 	 * 
-	 * @param lowerLeft must not be {@literal null} and contain exactly 2 doubles.
-	 * @param upperRight must not be {@literal null} and contain exactly 2 doubles.
+	 * @param first must not be {@literal null} and contain exactly 2 doubles.
+	 * @param second must not be {@literal null} and contain exactly 2 doubles.
 	 */
-	public Box(double[] lowerLeft, double[] upperRight) {
+	public Box(double[] first, double[] second) {
 
-		Assert.isTrue(lowerLeft.length == 2, "Point array has to have 2 elements!");
-		Assert.isTrue(upperRight.length == 2, "Point array has to have 2 elements!");
+		Assert.isTrue(first.length == 2, "Point array has to have 2 elements!");
+		Assert.isTrue(second.length == 2, "Point array has to have 2 elements!");
 
-		this.first = new Point(lowerLeft[0], lowerLeft[1]);
-		this.second = new Point(upperRight[0], upperRight[1]);
+		this.first = new Point(first[0], first[1]);
+		this.second = new Point(second[0], second[1]);
 	}
 
-	public Point getLowerLeft() {
+	public Point getFirst() {
 		return first;
 	}
 
-	public Point getUpperRight() {
+	public Point getSecond() {
 		return second;
 	}
 
